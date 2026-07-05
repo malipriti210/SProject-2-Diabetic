@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import pickle
+import joblib
 
 # ---------------------- PAGE ----------------------
 st.set_page_config(
@@ -10,7 +11,7 @@ st.set_page_config(
 )
 
 # ---------------------- LOAD MODEL ----------------------
-model = pickle.load(open("model.pkl", "rb"))
+model = joblib.load("model.pkl", "rb")
 columns = pickle.load(open("columns.pkl", "rb"))
 
 # ---------------------- CSS ----------------------
